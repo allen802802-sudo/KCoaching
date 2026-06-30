@@ -32,9 +32,9 @@
             line-height: 1.6;
         }
 
-        /* 頂部導覽列：左上角加入 Logo 圖標 */
+        /* 頂部導覽列：完美固定、極致 RWD 防跑位 */
         nav {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.96);
             border-bottom: 1px solid var(--line-light);
             padding: 15px 25px;
             display: flex;
@@ -46,30 +46,20 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
+        /* 修正：改用標準圖片路徑，確保官方 Logo 完美呈現 */
         .logo-container {
             display: flex;
             align-items: center;
             gap: 12px;
-        }
-
-        /* 凱基人壽標誌性四色幾何Logo組合 */
-        .kgi-logo-icon {
-            display: flex;
-            flex-wrap: wrap;
-            width: 28px;
-            height: 28px;
-            transform: rotate(45deg);
             flex-shrink: 0;
         }
 
-        .kgi-logo-icon span {
-            width: 14px;
-            height: 14px;
+        .kgi-official-logo {
+            height: 32px; /* 根據商務規格調整的黃金高度 */
+            width: auto;
+            object-fit: contain;
+            display: block;
         }
-        .kgi-logo-icon .b1 { background: var(--kgi-blue); }
-        .kgi-logo-icon .b2 { background: var(--kgi-orange); }
-        .kgi-logo-icon .b3 { background: var(--kgi-green); }
-        .kgi-logo-icon .b4 { background: #FFD200; }
 
         .logo-text {
             font-family: 'Noto Serif TC', serif;
@@ -78,6 +68,8 @@
             color: var(--kgi-blue);
             white-space: nowrap;
             letter-spacing: 1px;
+            display: flex;
+            align-items: center;
         }
 
         .logo-text span {
@@ -129,11 +121,11 @@
             box-shadow: none;
         }
 
-        /* 主視覺區：讀取同資料夾下的大樓圖片 */
+        /* 主視覺區：融入凱基金控大樓圖片背景 */
         .hero-section {
             height: 75vh;
             background: linear-gradient(135deg, rgba(0, 70, 139, 0.94) 35%, rgba(0, 70, 139, 0.3) 100%), 
-                        url('image_496d6e.jpg') center/cover no-repeat;
+                        url('http://googleusercontent.com/image_collection/image_retrieval/15029095061726923762_0') center/cover no-repeat;
             display: flex;
             align-items: center;
             padding: 0 8%;
@@ -186,7 +178,7 @@
             font-size: 16px;
         }
 
-        /* 內容容器 */
+        /* 內容區塊 */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -215,7 +207,7 @@
             font-weight: bold;
         }
 
-        /* 四大主題課程 (文字與重點放大) */
+        /* 四大主題課程 (大字級焦點) */
         .course-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -375,10 +367,10 @@
             transform: scale(1.2);
         }
 
-        /* 底部大動作呼籲區 (讀取同資料夾下的大樓圖片) */
+        /* 底部大動作呼籲區 (大樓背景視覺延伸) */
         .bottom-cta-section {
             background: linear-gradient(rgba(0, 70, 139, 0.88), rgba(0, 70, 139, 0.88)),
-                        url('image_496d6e.jpg') center/cover no-repeat;
+                        url('http://googleusercontent.com/image_collection/image_retrieval/15029095061726923762_0') center/cover no-repeat;
             padding: 100px 24px;
             text-align: center;
             color: white;
@@ -427,7 +419,7 @@
             border-top: 1px solid #222;
         }
 
-        /* 手機版 RWD 完美防跑版語法 */
+        /* 手機 RWD 排版調校：完美防止報名列跑版 */
         @media (max-width: 768px) {
             nav {
                 padding: 12px 15px;
@@ -439,7 +431,7 @@
                 display: none; 
             }
             .btn-nav-cta {
-                padding: 6px 12px;
+                padding: 7px 14px;
                 font-size: 13px;
             }
             .hero-section {
@@ -499,10 +491,7 @@
 
     <nav>
         <div class="logo-container">
-            <div class="kgi-logo-icon">
-                <span class="b1"></span><span class="b2"></span>
-                <span class="b4"></span><span class="b3"></span>
-            </div>
+            <img src="logo.png" alt="凱基人壽" class="kgi-official-logo" onerror="this.style.display='none';">
             <div class="logo-text">凱基人壽<span>KGI LIFE</span></div>
         </div>
         <div class="nav-right">
@@ -651,7 +640,7 @@
         <div class="bottom-cta-container">
             <h2>2026 凱壽總部見</h2>
             <p>掌握成區的關鍵，精準開啟高階組織擴張。菁英齊聚，就等您就定位！</p>
-            <a href="https://docs.google.com/forms/..." target="_blank" class="btn-final-cta">立即參與計畫甄選</a>
+            <a href="#" target="_blank" class="btn-final-cta">立即參與計畫甄選</a>
         </div>
     </section>
 
