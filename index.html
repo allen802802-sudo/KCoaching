@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
@@ -32,34 +32,52 @@
             line-height: 1.6;
         }
 
-        /* 導覽列 */
+        /* 頂部導覽列：確保手機版絕對不跑位 */
         nav {
             background: rgba(255, 255, 255, 0.95);
             border-bottom: 1px solid var(--line-light);
-            padding: 20px 40px;
+            padding: 15px 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .logo {
             font-family: 'Noto Serif TC', serif;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 900;
             color: var(--kgi-blue);
+            white-space: nowrap;
+        }
+
+        .logo span {
+            font-size: 14px;
+            font-family: 'Noto Sans TC', sans-serif;
+            margin-left: 5px;
+            color: var(--text-gray);
+            font-weight: normal;
+        }
+
+        .nav-right {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
         }
 
         .nav-links a {
             color: var(--text-gray);
             text-decoration: none;
-            margin-left: 30px;
             font-weight: bold;
+            font-size: 15px;
             transition: 0.3s;
         }
 
@@ -70,23 +88,32 @@
         .btn-nav-cta {
             background: var(--kgi-orange);
             color: white !important;
-            padding: 8px 20px;
+            padding: 8px 16px;
             border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 14px;
+            white-space: nowrap;
+            transition: 0.3s;
         }
 
-        /* 滿版英雄區 (融入總部大樓) */
+        .btn-nav-cta:hover {
+            background: var(--kgi-blue);
+        }
+
+        /* 滿版大黃金視覺區（融入凱基金控總部大樓與 101 空照圖） */
         .hero-section {
-            height: 85vh;
-            background: linear-gradient(135deg, rgba(0, 70, 139, 0.92) 40%, rgba(0, 70, 139, 0.4) 100%), 
-                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            height: 75vh;
+            background: linear-gradient(135deg, rgba(0, 70, 139, 0.92) 30%, rgba(0, 70, 139, 0.3) 100%), 
+                        url('image_496d6e.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
-            padding: 0 10%;
+            padding: 0 8%;
             color: white;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 750px;
         }
 
         .hero-tag {
@@ -94,14 +121,14 @@
             font-weight: 700;
             letter-spacing: 4px;
             margin-bottom: 15px;
-            font-size: 18px;
+            font-size: 16px;
         }
 
         .hero-section h1 {
             font-family: 'Noto Serif TC', serif;
-            font-size: 64px;
+            font-size: 56px;
             font-weight: 900;
-            line-height: 1.15;
+            line-height: 1.2;
             margin-bottom: 25px;
         }
 
@@ -110,48 +137,50 @@
         }
 
         .hero-p {
-            font-size: 24px;
+            font-size: 22px;
             opacity: 0.95;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
             border-left: 5px solid var(--kgi-orange);
-            padding-left: 20px;
+            padding-left: 15px;
         }
 
         .hero-badges {
             display: flex;
-            gap: 20px;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .hero-badge {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.12);
             border: 1px solid rgba(255,255,255,0.3);
-            padding: 10px 25px;
+            padding: 8px 20px;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 16px;
+            letter-spacing: 1px;
         }
 
-        /* 通用區塊排版 */
+        /* 內容容器 */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 100px 20px;
+            padding: 80px 24px;
         }
 
         .section-header {
-            margin-bottom: 60px;
+            margin-bottom: 50px;
             border-left: 10px solid var(--kgi-blue);
-            padding-left: 25px;
+            padding-left: 20px;
         }
 
         .section-header h2 {
             font-family: 'Noto Serif TC', serif;
-            font-size: 44px;
+            font-size: 38px;
             color: var(--kgi-blue);
         }
 
         .section-header span {
             display: block;
-            font-size: 16px;
+            font-size: 14px;
             text-transform: uppercase;
             color: var(--kgi-orange);
             letter-spacing: 3px;
@@ -159,7 +188,7 @@
             font-weight: bold;
         }
 
-        /* 重點一：四大主題課程 (大幅字體放大) */
+        /* 凸顯：四大主題課程 (放大字體) */
         .course-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -169,10 +198,10 @@
         .course-card {
             background: white;
             border: 1px solid var(--line-light);
-            padding: 50px 40px;
+            padding: 45px 35px;
             display: flex;
             align-items: flex-start;
-            gap: 30px;
+            gap: 25px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.02);
             transition: 0.3s;
         }
@@ -183,36 +212,34 @@
         }
 
         .course-icon-box {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             background: #F0F5FA;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 36px;
+            font-size: 32px;
             color: var(--kgi-blue);
             flex-shrink: 0;
         }
 
         .course-card h3 {
             font-family: 'Noto Serif TC', serif;
-            font-size: 32px; /* 大幅放大標題 */
+            font-size: 30px; 
             color: var(--kgi-blue);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .course-card p {
-            font-size: 18px; /* 放大內文 */
+            font-size: 18px; 
             color: var(--text-gray);
-            font-weight: 400;
         }
 
-        /* 重點二：三大實戰社團 (強烈圖章凸顯) */
+        /* 凸顯：三大實戰社團 */
         .clubs-section {
             background: #F0F4F8;
-            padding: 100px 0;
-            position: relative;
+            padding: 80px 0;
         }
 
         .club-grid {
@@ -224,40 +251,27 @@
         .club-card {
             background: var(--kgi-blue);
             color: white;
-            padding: 50px 40px;
+            padding: 45px 35px;
             position: relative;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0,70,139,0.15);
-        }
-
-        .club-card::before {
-            content: "CLUB";
-            position: absolute;
-            right: -20px;
-            bottom: -10px;
-            font-size: 90px;
-            font-family: 'Noto Serif TC', serif;
-            font-weight: 900;
-            opacity: 0.06;
-            color: white;
+            box-shadow: 0 12px 25px rgba(0,70,139,0.12);
         }
 
         .club-card h3 {
             font-family: 'Noto Serif TC', serif;
-            font-size: 36px; /* 放大字體 */
-            margin-bottom: 20px;
+            font-size: 34px; 
+            margin-bottom: 15px;
             border-bottom: 3px solid var(--kgi-orange);
-            padding-bottom: 10px;
+            padding-bottom: 8px;
             display: inline-block;
         }
 
         .club-card p {
             font-size: 18px;
-            opacity: 0.9;
+            opacity: 0.92;
             line-height: 1.7;
         }
 
-        /* 招生條件區 */
+        /* 招生條件 */
         .criteria-row {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -267,31 +281,31 @@
         .criteria-box {
             background: white;
             border-top: 5px solid var(--kgi-blue);
-            padding: 40px 30px;
+            padding: 40px 25px;
             text-align: center;
         }
 
         .criteria-box h4 {
             font-family: 'Noto Serif TC', serif;
-            font-size: 24px;
+            font-size: 22px;
             color: var(--kgi-blue);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .criteria-box .num {
-            font-size: 48px;
+            font-size: 44px;
             font-weight: 900;
             color: var(--kgi-orange);
             font-family: 'Noto Serif TC', serif;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
-        /* 甄選時程表 */
+        /* 甄選時程 */
         .timeline {
             display: flex;
             justify-content: space-between;
             position: relative;
-            margin-top: 60px;
+            margin-top: 50px;
         }
 
         .timeline::before {
@@ -307,25 +321,25 @@
             position: relative;
             z-index: 2;
             background: var(--editorial-bg);
-            padding: 0 10px;
+            padding: 0 5px;
             width: 18%;
         }
 
         .node-date {
             font-family: 'Noto Serif TC', serif;
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 900;
             color: var(--kgi-orange);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .node-dot {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             background: white;
             border: 4px solid var(--kgi-blue);
             border-radius: 50%;
-            margin: 0 auto 20px auto;
+            margin: 0 auto 15px auto;
         }
 
         .timeline-node.active .node-dot {
@@ -334,102 +348,123 @@
             transform: scale(1.2);
         }
 
-        /* 報名表單區 (融合總部大樓遠景) */
-        .registration-section {
-            background: linear-gradient(to right, rgba(249,249,247,0.98) 50%, rgba(249,249,247,0.8) 100%),
-                        url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            padding: 100px 0;
-        }
-
-        .form-wrapper {
-            background: white;
-            padding: 60px;
-            max-width: 800px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-            border-radius: 4px;
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group.full-width {
-            grid-column: span 2;
-        }
-
-        .form-group label {
-            font-weight: bold;
-            color: var(--kgi-blue);
-            margin-bottom: 8px;
-        }
-
-        .form-group input, .form-group select {
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-
-        .checkbox-group {
-            margin: 10px 0;
-        }
-
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-
-        .btn-submit {
-            grid-column: span 2;
-            background: var(--kgi-orange);
+        /* 底部大動作呼籲區 (取代原表單，融合大樓意象) */
+        .bottom-cta-section {
+            background: linear-gradient(rgba(0, 70, 139, 0.85), rgba(0, 70, 139, 0.85)),
+                        url('image_496d6e.jpg') center/cover no-repeat;
+            padding: 100px 24px;
+            text-align: center;
             color: white;
-            border: none;
-            padding: 18px;
-            font-size: 22px;
+        }
+
+        .bottom-cta-container h2 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .bottom-cta-container p {
+            font-size: 24px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+        }
+
+        .btn-final-cta {
+            background-color: var(--kgi-orange);
+            color: white;
+            padding: 18px 60px;
+            font-size: 24px;
             font-family: 'Noto Serif TC', serif;
             font-weight: 900;
             letter-spacing: 4px;
-            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 10px 25px rgba(243,108,33,0.3);
             transition: 0.3s;
-            margin-top: 20px;
         }
 
-        .btn-submit:hover {
-            background: var(--kgi-blue);
+        .btn-final-cta:hover {
+            background: white;
+            color: var(--kgi-blue);
+            transform: translateY(-3px);
         }
 
         /* 頁尾 */
         footer {
             background: #111;
             color: #888;
-            padding: 40px;
+            padding: 35px;
             text-align: center;
             font-size: 14px;
+            border-top: 1px solid #222;
         }
 
-        footer strong {
-            color: white;
-        }
-
-        /* RWD 行動裝置優化 */
-        @media (max-width: 992px) {
-            .hero-section h1 { font-size: 44px; }
-            .course-grid, .club-grid, .criteria-row, .form-grid { grid-template-columns: 1fr; }
-            .form-group.full-width { grid-column: span 1; }
-            .btn-submit { grid-column: span 1; }
-            .timeline { flex-direction: column; gap: 30px; }
-            .timeline::before { display: none; }
-            .timeline-node { width: 100%; text-align: left; display: flex; align-items: center; gap: 20px; }
-            .node-dot { margin: 0; }
+        /* 📱 完美適應手機比例與防止跑版 */
+        @media (max-width: 768px) {
+            nav {
+                padding: 12px 15px;
+            }
+            .logo span {
+                display: none; /* 手機版隱藏副標，避免擠壓 */
+            }
+            .nav-links {
+                display: none; /* 手機版隱藏次要連結，維持極簡 */
+            }
+            .btn-nav-cta {
+                padding: 6px 12px;
+                font-size: 13px;
+            }
+            .hero-section {
+                height: 65vh;
+                padding: 0 5%;
+            }
+            .hero-section h1 {
+                font-size: 36px;
+            }
+            .hero-p {
+                font-size: 18px;
+            }
+            .course-grid, .club-grid, .criteria-row {
+                grid-template-columns: 1fr;
+            }
+            .course-card {
+                padding: 30px 20px;
+            }
+            .course-card h3 {
+                font-size: 24px;
+            }
+            .club-card h3 {
+                font-size: 28px;
+            }
+            .timeline {
+                flex-direction: column;
+                gap: 25px;
+            }
+            .timeline::before {
+                display: none;
+            }
+            .timeline-node {
+                width: 100%;
+                text-align: left;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+            .node-dot {
+                margin: 0;
+            }
+            .bottom-cta-container h2 {
+                font-size: 32px;
+            }
+            .bottom-cta-container p {
+                font-size: 18px;
+            }
+            .btn-final-cta {
+                padding: 14px 40px;
+                font-size: 18px;
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -437,17 +472,19 @@
 
     <nav>
         <div class="logo">KGI Life <span>凱基人壽</span></div>
-        <div class="nav-links">
-            <a href="#courses">核心架構</a>
-            <a href="#clubs">實戰社團</a>
-            <a href="#criteria">報名資格</a>
-            <a href="#register" class="btn-nav-cta">立即報名</a>
+        <div class="nav-right">
+            <div class="nav-links">
+                <a href="#courses">課程主軸</a>
+                <a href="#clubs">實戰社團</a>
+                <a href="#criteria">資格時程</a>
+            </div>
+            <a href="#register-action" class="btn-nav-cta">立即報名</a>
         </div>
     </nav>
 
     <section class="hero-section">
         <div class="hero-content">
-            <div class="hero-tag">2026 KGI LEADERSHIP DEVELOPMENT</div>
+            <div class="hero-tag">2026 KGI LEADERSHIP SERIES</div>
             <h1>K COACHING<br><span>成區培育計畫</span></h1>
             <p class="hero-p">全國頂尖準經理們齊聚共學共戰，從教練蛻變成卓越經理的最佳管道！</p>
             <div class="hero-badges">
@@ -468,28 +505,28 @@
                 <div class="course-icon-box"><i class="fa-solid fa-user-plus"></i></div>
                 <div>
                     <h3>增員好上手</h3>
-                    <p>掌握專屬增員利器，拆解並熟練核心 R1-R6 招募心技法，讓人才引進流程化、高效化。</p>
+                    <p>精準解析專屬增員利器，拆解並熟練核心 R1-R6 招募心技法，讓優秀人才引進流程化、高效化。</p>
                 </div>
             </div>
             <div class="course-card">
                 <div class="course-icon-box"><i class="fa-solid fa-diagram-next"></i></div>
                 <div>
                     <h3>組織推進</h3>
-                    <p>精準掌握準增員的核心推力，引導準增主管建立全新的組織擴張思維與長遠策略。</p>
+                    <p>精準掌握準增員的核心推力，引導準增主管打破傳統瓶頸，建立全新的組織擴張新思維。</p>
                 </div>
             </div>
             <div class="course-card">
                 <div class="course-icon-box"><i class="fa-solid fa-handshake-angle"></i></div>
                 <div>
                     <h3>輔導激勵</h3>
-                    <p>建立高效能、可複製的團隊輔導場景系統，深耕心態致勝術（同理心引導與深度心談）。</p>
+                    <p>全面建立高效能、可複製的團隊輔導場景系統，深耕心態致勝術（運用同理心進行深度心談）。</p>
                 </div>
             </div>
             <div class="course-card">
                 <div class="course-icon-box"><i class="fa-solid fa-gem"></i></div>
                 <div>
                     <h3>領導思維</h3>
-                    <p>全面凝聚團隊核心共識，點燃增員氛圍，將個人能力成功轉化為組織整體的戰鬥力。</p>
+                    <p>全面凝聚團隊核心共識，點燃增員氛圍，將個人的卓越成功轉化為組織整體的持續戰鬥力。</p>
                 </div>
             </div>
         </div>
@@ -504,15 +541,15 @@
             <div class="club-grid">
                 <div class="club-card">
                     <h3>增員社</h3>
-                    <p>聚焦實戰招募攻防，透過同儕共學，將 R1-R6 心技法轉化為每日具體的團隊增長動能。</p>
+                    <p>聚焦實戰招募攻防與落地演練，將 R1-R6 心技法內化為每日具體的團隊組織增長動能。</p>
                 </div>
                 <div class="club-card">
                     <h3>輔導社</h3>
-                    <p>針對實際管理盲點進行「金牌教練個案研討」，突破既有思維，提升團隊日常發展效率。</p>
+                    <p>針對實際管理情境進行「金牌教練個案研討」，徹底突破既有思維，提升團隊運作與發展效率。</p>
                 </div>
                 <div class="club-card">
                     <h3>推進社</h3>
-                    <p>落實「報表績效關鍵檢視」，掌握數據監控與目標追蹤的核心邏輯，用數字推動組織成長。</p>
+                    <p>落實「報表績效關鍵檢視」，掌握核心數據控管與精密目標追蹤，用科學化数字推動組織成長。</p>
                 </div>
             </div>
         </div>
@@ -523,7 +560,6 @@
             <h2>招生與甄選條件</h2>
             <span>Eligibility Report</span>
         </div>
-        <p style="font-size: 18px; color: var(--text-gray); margin-bottom: 40px;">計畫專為<b>業務襄理 SAS</b>量身打造（以 2025 年 1~11 月績效區間計算）：</p>
         <div class="criteria-row">
             <div class="criteria-box">
                 <div class="num">1<span>組</span></div>
@@ -541,6 +577,7 @@
                 <p>直轄組月均達 3C，確保穩定高產出。</p>
             </div>
         </div>
+        <p style="margin-top: 25px; text-align: center; font-style: italic; color: var(--text-gray);">* 計畫限業務襄理 SAS 參與（以 2025 年 1-11 月區間績效考核為準）</p>
     </section>
 
     <section class="container" style="padding-top: 0;">
@@ -548,7 +585,6 @@
             <h2>甄選與培訓時程</h2>
             <span>Program Roadmap</span>
         </div>
-        <p style="font-size: 20px; font-weight: bold; color: var(--kgi-blue);">💡 2026年1月底正式啟動 • 每月參訓 1 日 • 為期 1 年</p>
         <div class="timeline">
             <div class="timeline-node">
                 <div class="node-date">12/8</div>
@@ -578,15 +614,17 @@
         </div>
     </section>
 
-    <section class="registration-section" id="register">
-        <div class="container">
-            <div class="form-wrapper">
-                <h2 style="font-family: 'Noto Serif TC', serif; font-size: 36px; color: var(--kgi-blue); margin-bottom: 10px;">意願登記報名</h2>
-                <p style="color: var(--kgi-orange); font-weight: bold; margin-bottom: 40px;">填寫下方表單以參與培育計畫遴選：</p>
-                
-                <form onsubmit="alert('報名資料已成功送出！期待與您在總部相見。'); return false;">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label>員工編號 *</label>
-                            <input type="text" placeholder="請輸入 6-8 位員編" required>
-    
+    <section class="bottom-cta-section" id="register-action">
+        <div class="bottom-cta-container">
+            <h2>2026 凱壽總部見</h2>
+            <p>掌握成區的關鍵，精準開啟高階組織擴張。菁英齊聚，就等您就定位！</p>
+            <a href="https://docs.google.com/forms/..." target="_blank" class="btn-final-cta">立即參與計畫甄選</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>主辦單位：凱基人壽 業務訓練部 | KGI LIFE STRATEGY REPORT</p>
+    </footer>
+
+</body>
+</html>
